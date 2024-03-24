@@ -289,9 +289,9 @@ with gr.Blocks(theme='Hev832/soft') as app:
                 with gr.TabItem("download acapella"):
                     url = gr.Textbox(label="url youtube")
                     audio_name = gr.Textbox(label="url youtube")
-                    out = gr.Dropdown(label="output")
+                    out = gr.Textbox(label="output")
                     download12 = gr.Button(label="download")
-                    download12.change(fn=download_audio,inputs=[url,audio_name],outputs=[out])
+                    download12.click(fn=download_audio,inputs=[url,audio_name],outputs=[out])
         
     with gr.Row():
         with gr.Tabs():
