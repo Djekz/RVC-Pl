@@ -265,12 +265,6 @@ with gr.Blocks(theme='Hev832/soft') as app:
     with gr.Row():
         with gr.Column():
             with gr.Tabs():
-              with gr.TabItem("download acapella"):
-                    url = gr.Textbox(label="url youtube")
-                    audio_name = gr.Textbox(label="url youtube")
-                    out = gr.Dropdown(label="output")
-                    download12 = gr.Button(label="download")
-                    download12.change(fn=download_audio,inputs=[url,audio_name],outputs=[out])
                 with gr.TabItem("1.Choose a voice model:"):
                     model_picker = gr.Dropdown(label="Model: ",choices=show_available('assets/weights','.pth'),value=show_available('assets/weights','.pth')[0],interactive=True,allow_custom_value=True)
                     index_picker = gr.Dropdown(label="Index:",interactive=True,choices=show_available('logs'),value=show_available('logs')[0],allow_custom_value=True)
@@ -292,6 +286,12 @@ with gr.Blocks(theme='Hev832/soft') as app:
                     index_rate = gr.Slider(label='Index Rate: ',minimum=0,maximum=1,value=0.66,step=0.01)
                     pitch = gr.Slider(label='Pitch (-12 lowers it an octave, 0 keeps the original pitch, 12 lifts it an octave): ',minimum =-12, maximum=12, step=1, value=0, interactive=True)
                     method = gr.Dropdown(label="Method:",choices=["rmvpe","pm"],value="rmvpe")
+                with gr.TabItem("download acapella"):
+                    url = gr.Textbox(label="url youtube")
+                    audio_name = gr.Textbox(label="url youtube")
+                    out = gr.Dropdown(label="output")
+                    download12 = gr.Button(label="download")
+                    download12.change(fn=download_audio,inputs=[url,audio_name],outputs=[out])
         
     with gr.Row():
         with gr.Tabs():
