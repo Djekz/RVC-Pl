@@ -59,7 +59,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
     try:
         process = subprocess.run(command, check=True)
         print("Script executed successfully.")
-        return {"choices":show_available("audios"),"__type__":"update","value":f"cli_output_{now}.wav"},f"audios/cli_output_{now}.wav"
+        return {"choices":show_available("audios"),"__type__":"update","value":f"{audio_picker}_{model_picker}_ver.wav"},f"{audio_picker}_{model_picker}_ver.wav"
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         return {"choices":show_available("audios"),"__type__":"update"}, None
