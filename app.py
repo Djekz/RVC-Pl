@@ -260,13 +260,13 @@ with gr.Blocks(theme='Hev832/Pl-tme') as app:
     with gr.Row():
         with gr.Column():
             gr.Markdown(
-                        """"
-                        "#RVC ⛈️ Pl"
+                        """
+                        # RVC ⛈️ Pl
                         
-                        "**based on Rejekts/RVC_PlayGround 💻**"
+                        **based on Rejekts/RVC_PlayGround 💻**
 
-                        "**credits: Blane187 and Rejekts 📲**"
-                        """"
+                        **credits: Blane187 and Rejekts 📲**
+                        """
                        )
             
        
