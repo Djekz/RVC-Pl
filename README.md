@@ -1,6 +1,10 @@
 # RVC_Pl
 
-*-Easy version of RVC Retrieval-based-Voice-Conversion-WebUI-*
+
+![](https://raw.githubusercontent.com/Djekz/RVC_Pl/main/head%20lol.png)
+
+
+*-Easy version of (RVC) Retrieval-based-Voice-Conversion-WebUI-*
 
 ----------------------------------------------------
 
