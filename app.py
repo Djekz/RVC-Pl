@@ -46,7 +46,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
         "--input_path", f"audios/{audio_picker}",
         "--index_path", index_files[0],
         "--f0method", method,
-        "--opt_path", f"audios/cli_output_{now}.wav",
+        "--opt_path", f"audios/{audio_picker}_{model_picker}_ver.wav",
         "--model_name", f"{model_picker}",
         "--index_rate", str(float(index_rate)),
         "--device", device,
@@ -259,9 +259,16 @@ def download_audio(url, audio_name):
 with gr.Blocks(theme='Hev832/Pl-tme') as app:
     with gr.Row():
         with gr.Column():
-            gr.Markdown("# RVC ⛈️ Pl")
-            gr.Markdown("## based on Rejekts/RVC_PlayGround 💻")
-            gr.Markdown("credits: Blane187 and Rejekts 📲")
+            gr.Markdown(
+                        """"
+                        "#RVC ⛈️ Pl"
+                        
+                        "**based on Rejekts/RVC_PlayGround 💻**"
+
+                        "**credits: Blane187 and Rejekts 📲**"
+                        """"
+                       )
+            
        
     with gr.Row():
         with gr.Column():
