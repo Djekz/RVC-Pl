@@ -46,7 +46,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
         "--input_path", f"audios/{audio_picker}",
         "--index_path", index_files[0],
         "--f0method", method,
-        "--opt_path", f"audios/out_{audio_picker}.wav",
+        "--opt_path", f"audios/out_{output_name}.wav",
         "--model_name", f"{model_picker}",
         "--index_rate", str(float(index_rate)),
         "--device", device,
@@ -59,7 +59,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
     try:
         process = subprocess.run(command, check=True)
         print("Script executed successfully.")
-        return {"choices":show_available("audios"),"__type__":"update","value":f"out_{audio_picker}.wav"},f"audios/out_{audio_picker}.wav"
+        return {"choices":show_available("audios"),"__type__":"update","value":f"out_{output_name}.wav"},f"audios/out_{output_name}.wav"
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         return {"choices":show_available("audios"),"__type__":"update"}, None
@@ -305,6 +305,7 @@ with gr.Blocks(theme='Hev832/Pl-tme') as app:
         with gr.Tabs():
             with gr.TabItem("2.Choose an audio file:"):
                 audio_picker = gr.Dropdown(label="pick your audio",choices=show_available('audios'),interactive=True)
+                output_name = gr.Textbox(label="output audio name")
             with gr.TabItem("3.record audio"):
                 recorder = gr.Microphone(label="Record audio here...",type='filepath')
                 
