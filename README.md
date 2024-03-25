@@ -2,6 +2,7 @@
 
 *-Easy version of RVC Retrieval-based-Voice-Conversion-WebUI-*
 
+----------------------------------------------------
 
 # Credits 
 
@@ -9,12 +10,17 @@
 
 - [yt dlp](https://github.com/yt-dlp/yt-dlp.git)
 
+----------------------------------------------------
 
 # Thanks To
 
 - [Rejekts](https://github.com/RejektsAI) original ui coder
 
 - [Blane](https://github.com/blane187) modify the code and fix some bug
+
+
+
+----------------------------------------------------
 
 
 ***Please Pull Request (PR) if there is an error or adding an interesting feature.***
