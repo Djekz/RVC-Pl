@@ -14,4 +14,7 @@
 
 - [Rejekts](https://github.com/RejektsAI) original ui coder
 
-- [Blane](https://github.com/blane187) modifed code and fix bug
+- [Blane](https://github.com/blane187) modify the code and fix some bug
+
+
+***Please Pull Request (PR) if there is an error or adding an interesting feature.***
