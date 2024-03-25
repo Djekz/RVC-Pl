@@ -46,7 +46,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
         "--input_path", f"audios/{audio_picker}",
         "--index_path", index_files[0],
         "--f0method", method,
-        "--opt_path", f"audios/{audio_picker}_{model_picker}_ver.wav",
+        "--opt_path", f"audios/{audio_name}_{name_model}_ver.wav",
         "--model_name", f"{model_picker}",
         "--index_rate", str(float(index_rate)),
         "--device", device,
@@ -59,7 +59,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
     try:
         process = subprocess.run(command, check=True)
         print("Script executed successfully.")
-        return {"choices":show_available("audios"),"__type__":"update","value":f"{audio_picker}_{model_picker}_ver.wav"},f"audios/{audio_picker}_{model_picker}_ver.wav"
+        return {"choices":show_available("audios"),"__type__":"update","value":f"{audio_name}_{name_model}_ver.wav"},f"audios/{audio_picker}_{model_picker}_ver.wav"
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         return {"choices":show_available("audios"),"__type__":"update"}, None
@@ -274,7 +274,8 @@ with gr.Blocks(theme='Hev832/Pl-tme') as app:
         with gr.Column():
             with gr.Tabs():
                 with gr.TabItem("1.Choose a voice model:"):
-                    model_picker = gr.Dropdown(label="Model: ",choices=show_available('assets/weights','.pth'),value=show_available('assets/weights','.pth'),interactive=True,allow_custom_value=True)
+                    model_picker = gr.Dropdown(label="pick Model: ",choices=show_available('assets/weights','.pth'),value=show_available('assets/weights','.pth'),interactive=True,allow_custom_value=True)
+                    name_model = gr.Textbox(label="model name must be the same as the pick Model")
                     index_picker = gr.Dropdown(label="Index:",interactive=True,choices=show_available('logs'),value=show_available('logs'),allow_custom_value=True)
                     model_picker.change(fn=load_model,inputs=[model_picker,index_picker],outputs=[index_picker])
                 with gr.TabItem("(Or download a model here)"):
