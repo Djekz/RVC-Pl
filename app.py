@@ -256,11 +256,11 @@ def download_audio(url, audio_name):
     return  
 
 
-with gr.Blocks(theme='Hev832/soft') as app:
+with gr.Blocks(theme='Hev832/Pl-tme') as app:
     with gr.Row():
         with gr.Column():
             gr.Markdown("# RVC ⛈️ Pl")
-            gr.Markdown("based on Rejekts/RVC_PlayGround 💻")
+            gr.Markdown("## based on Rejekts/RVC_PlayGround 💻")
             gr.Markdown("credits: Blane187 and Rejekts 📲")
        
     with gr.Row():
@@ -297,8 +297,10 @@ with gr.Blocks(theme='Hev832/soft') as app:
     with gr.Row():
         with gr.Tabs():
             with gr.TabItem("2.Choose an audio file:"):
+                audio_picker = gr.Dropdown(label="pick your audio",choices=show_available('audios'),interactive=True)
+            with gr.TabItem("3.record audio"):
                 recorder = gr.Microphone(label="Record audio here...",type='filepath')
-                audio_picker = gr.Dropdown(label="",choices=show_available('audios'),value='',interactive=True)
+                
                 try:
                     recorder.stop_recording(upload_file, inputs=[recorder],outputs=[audio_picker])
                 except:
@@ -319,4 +321,4 @@ with gr.Blocks(theme='Hev832/soft') as app:
         audio_picker.change(fn=update_audio_player, inputs=[audio_picker],outputs=[audio_player])
         convert_button.click(convert, inputs=inputs,outputs=[audio_picker,audio_player])
 
-app.queue(max_size=20).launch(debug=True,share=True)
+app.launch(debug=True, share=True)
