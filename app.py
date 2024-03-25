@@ -263,9 +263,9 @@ with gr.Blocks(theme='Hev832/Pl-tme') as app:
                         """
                         # RVC ⛈️ Pl
                         
-                        **based on Rejekts/RVC_PlayGround 💻**
+                        **based on Rejekts/RVC_PlayGround **
 
-                        **credits: Blane187 and Rejekts 📲**
+                        **credits: Blane187 and Rejekts**
                         """
                        )
             
@@ -296,9 +296,9 @@ with gr.Blocks(theme='Hev832/Pl-tme') as app:
                     method = gr.Dropdown(label="Method:",choices=["rmvpe","pm"],value="rmvpe")
                 with gr.TabItem("download acapella"):
                     url = gr.Textbox(label="url youtube")
-                    audio_name = gr.Textbox(label="url youtube")
+                    audio_name = gr.Textbox(label="name audio")
                     out = gr.Textbox(label="output")
-                    download12 = gr.Button(label="download")
+                    download12 = gr.Button("download!")
                     download12.click(fn=download_audio,inputs=[url,audio_name],outputs=[out])
         
     with gr.Row():
