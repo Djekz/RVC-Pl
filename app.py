@@ -256,16 +256,16 @@ def download_audio(url, audio_name):
     return  
 
 
-with gr.Blocks(theme='Hev832/Pl-tme') as app:
+with gr.Blocks(theme=gr.themes.Soft(primary_hue="orange",neutral_hue="zinc",font="Play") as app:
     with gr.Row():
         with gr.Column():
             gr.Markdown(
                         """
                         # RVC ⛈️ Pl
                         
-                        **based on Rejekts/RVC_PlayGround **
+                        **based on Rejekts/RVC_PlayGround**
 
-                        **credits: Blane187 and Rejekts**
+                        ## credits: Blane187 and Rejekts
                         """
                        )
             
