@@ -256,7 +256,7 @@ def download_audio(url, audio_name):
     return  
 
 
-with gr.Blocks(theme=gr.themes.Soft(primary_hue="orange",neutral_hue="zinc",font="Play") as app:
+with gr.Blocks(theme=gr.themes.Soft(primary_hue="orange",neutral_hue="zinc") as app:
     with gr.Row():
         with gr.Column():
             gr.Markdown(
