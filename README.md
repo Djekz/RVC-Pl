@@ -8,6 +8,15 @@
 
 ----------------------------------------------------
 
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Blane187/RVC_Pl/blob/main/RVC_Pl.ipynb)
+
+
+
+
+
+
 # Credits 
 
 - [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI)
