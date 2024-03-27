@@ -332,6 +332,6 @@ with gr.Blocks(theme='Hev832/Pl-tme') as app:
         audio_player = gr.Audio()
         inputs = [audio_picker,model_picker,index_picker,index_rate,pitch,method,output_name]
         audio_picker.change(fn=update_audio_player, inputs=[audio_picker],outputs=[audio_player])
-        convert_button.click(convert, inputs=inputs,outputs=[audio_picker,audio_player,output_name])
+        convert_button.click(convert, inputs=inputs,outputs=[audio_picker,audio_player])
 
 app.launch(debug=True, share=True)
