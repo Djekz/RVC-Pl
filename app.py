@@ -2,7 +2,6 @@ import gradio as gr
 import os, shutil
 import subprocess, glob
 import yt_dlp
-from datetime import datetime
 from tools.useftools import *
 os.environ["rmvpe_root"] = "assets/rmvpe"
 os.environ['index_root']="logs"
@@ -14,10 +13,6 @@ import datetime
 os.makedirs(os.path.join(".", "audios"), exist_ok=True)
 config = Config()
 vc = VC(config)
-
-current_date = datetime.date.today()
-
-number = current_date.day
 
 def warn(text):
     try: gr.Warning(text)
@@ -261,7 +256,7 @@ def download_audio(url, audio_name):
     return  
 
 
-with gr.Blocks(theme='Hev832/Pl-tme') as app:
+with gr.Blocks(theme='nota-ai/theme-v4') as app:
     with gr.Row():
         with gr.Column():
             gr.Markdown(
