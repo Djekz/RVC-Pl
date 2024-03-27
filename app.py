@@ -10,9 +10,14 @@ os.environ['weight_root']="assets/weights"
 from infer.modules.vc.modules import VC
 from configs.config import Config
 import torch
+import datetime
 os.makedirs(os.path.join(".", "audios"), exist_ok=True)
 config = Config()
 vc = VC(config)
+
+current_date = datetime.date.today()
+
+number = current_date.day
 
 def warn(text):
     try: gr.Warning(text)
@@ -46,7 +51,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
         "--input_path", f"audios/{audio_picker}",
         "--index_path", index_files[0],
         "--f0method", method,
-        "--opt_path", f"audios/out_{output_name}.wav",
+        "--opt_path", = f"audios/out_{number}.wav"
         "--model_name", f"{model_picker}",
         "--index_rate", str(float(index_rate)),
         "--device", device,
