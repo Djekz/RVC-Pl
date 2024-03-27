@@ -51,7 +51,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
         "--input_path", f"audios/{audio_picker}",
         "--index_path", index_files[0],
         "--f0method", method,
-        "--opt_path", f"audios/out_{number}.wav"
+        "--opt_path", f"audios/out_{now}.wav"
         "--model_name", f"{model_picker}",
         "--index_rate", str(float(index_rate)),
         "--device", device,
@@ -64,7 +64,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
     try:
         process = subprocess.run(command, check=True)
         print("Script executed successfully.")
-        return {"choices":show_available("audios"),"__type__":"update","value":f"out_{number}.wav"},f"audios/out_{number}.wav"
+        return {"choices":show_available("audios"),"__type__":"update","value":f"out_{now}.wav"},f"audios/out_{now}.wav"
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         return {"choices":show_available("audios"),"__type__":"update"}, None
