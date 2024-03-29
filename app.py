@@ -9,7 +9,6 @@ os.environ['weight_root']="assets/weights"
 from infer.modules.vc.modules import VC
 from configs.config import Config
 import torch
-import datetime
 os.makedirs(os.path.join(".", "audios"), exist_ok=True)
 config = Config()
 vc = VC(config)
