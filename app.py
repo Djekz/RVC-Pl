@@ -252,7 +252,7 @@ def download_audio(url, audio_name):
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
-    return  
+    return  "outtmpl"
 
 
 with gr.Blocks(theme='nota-ai/theme-v4') as app:
