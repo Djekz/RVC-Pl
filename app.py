@@ -29,7 +29,6 @@ def load_model(model_picker,index_picker):
 
 def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
     warn("Your audio is being converted. Please wait.")
-    now = datetime.now().strftime("%d%m%Y%H%M%S")
     index_files = glob.glob(f"logs/{index_picker}/*.index")
     if index_files:
         print(f"Found index: {index_files[0]}")
@@ -45,7 +44,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
         "--input_path", f"audios/{audio_picker}",
         "--index_path", index_files[0],
         "--f0method", method,
-        "--opt_path", f"audios/cli_output_{now}.wav"
+        "--opt_path", f"audios/cli_output.wav"
         "--model_name", f"{model_picker}",
         "--index_rate", str(float(index_rate)),
         "--device", device,
@@ -58,7 +57,7 @@ def convert(audio_picker,model_picker,index_picker,index_rate,pitch,method):
     try:
         process = subprocess.run(command, check=True)
         print("Script executed successfully.")
-        return {"choices":show_available("audios"),"__type__":"update","value":f"cli_output_{now}.wav"},f"audios/cli_output_{now}.wav"
+        return {"choices":show_available("audios"),"__type__":"update","value":f"cli_output.wav"},f"audios/cli_output.wav"
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         return {"choices":show_available("audios"),"__type__":"update"}, None
